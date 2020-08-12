@@ -19,7 +19,7 @@ object main extends App {
     val producer = new KafkaProducer[String, String](kafkaProps);
     for( i <- 1 to 10) {
         try {
-            val record = new ProducerRecord[String, String](topic, null, s"record nr: $i");
+            val record = new ProducerRecord[String, String](topic, null, s"record nr: $i")
             producer.send(record)
             println(s"----- send record: $i")
         } catch {
