@@ -1,0 +1,3 @@
+get confluent all-in-one "docker-compose.yml" from:
+
+https://raw.githubusercontent.com/confluentinc/cp-all-in-one/5.5.1-post/cp-all-in-one/docker-compose.yml
