@@ -23,8 +23,8 @@ object main extends App {
   kafkaProps.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer")
   kafkaProps.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer")
   kafkaProps.put("max.poll.records", 3)
-  val consumer = new KafkaConsumer[String, String](kafkaProps);
-  consumer.subscribe(List(topic).asJava);
+  val consumer = new KafkaConsumer[String, String](kafkaProps)
+  consumer.subscribe(List(topic).asJava)
 
   var noMessagesCount = 0
 

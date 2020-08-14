@@ -2,4 +2,5 @@
 .idea
 target
 docker-compose.yml
-
+kafkaDemoConsumer.jar
+kafkaDemoProducer.jar
