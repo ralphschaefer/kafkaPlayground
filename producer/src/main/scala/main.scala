@@ -10,6 +10,8 @@ object main extends App {
 
     println("Producer")
 
+    println(dtos.Message.schema)
+
     val topic = "testtopic"
 
     val kafkaProps = new Properties()
