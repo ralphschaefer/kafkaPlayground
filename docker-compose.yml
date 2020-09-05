@@ -236,6 +236,12 @@ services:
       kafka_net:
         ipv4_address: 172.166.1.31
 
+  rest:
+    build: simpleREST
+    networks:
+      kafka_net:
+        ipv4_address: 172.166.1.32
+
 networks:
   kafka_net:
     ipam:

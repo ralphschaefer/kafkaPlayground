@@ -1,6 +1,15 @@
 ### connect plugins
 GET http://localhost:8083/connector-plugins/
 
+
+### rest test
+POST 172.166.1.32:8080/echo
+Content-Type: application/json
+
+{
+  "msg": "world"
+}
+
 #### connect config
 GET ....
 {
