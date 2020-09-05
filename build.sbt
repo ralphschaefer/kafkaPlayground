@@ -47,6 +47,26 @@ lazy val consumer = (project in file("consumer")).
     )
   )
 
+
+lazy val simpleREST = (project in file("simpleREST")).
+  settings(
+    inThisBuild(List(
+      scalaVersion := "2.13.3",
+      organization := "my.kafkaDemo",
+      test in assembly := {},
+      assemblyJarName in assembly := "simpleREST.jar"
+    )),
+    name := "simpleREST",
+    assemblyJarName in assembly := name.value + ".jar",
+    test in assembly := {},
+    libraryDependencies ++=
+      CatsDependencies.libs ++
+      Seq(
+      "ch.qos.logback" % "logback-classic" % "1.2.3",
+      "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2"
+    )
+  )
+
 val allProjects=Seq(
   consumer, producer
 ).map(_.id)

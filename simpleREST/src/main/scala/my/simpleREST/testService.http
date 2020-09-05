@@ -1,0 +1,14 @@
+###
+GET localhost:8080/echo/world
+
+###
+POST localhost:8080/echo
+Content-Type: application/json
+
+{
+  "msg": "world"
+}
+
+###
+GET localhost:8080/test
+
