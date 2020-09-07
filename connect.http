@@ -9,23 +9,3 @@ Content-Type: application/json
 {
   "msg": "world"
 }
-
-#### connect config
-GET ....
-{
-  "name": "test",
-  "config": {
-    "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
-    "connection.url": "jdbc:mysql://172.166.1.30:3306/db1",
-    "connection.user": "root",
-    "connection.password": "root",
-    "connection.attempts": "20",
-    "table.whitelist": "MyTest",
-    "table.blacklist": "sys_config, flyway_schema_history",
-    "mode": "incrementing",
-    "incrementing.column.name": "id",
-    "timestamp.initial": "-1",
-    "validate.non.null": false,
-    "topic.prefix": "testt"
-  }
-}

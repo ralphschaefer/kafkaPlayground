@@ -1,0 +1,27 @@
+{
+  "name": "simplehttp",
+  "connector.class": "io.confluent.connect.http.HttpSinkConnector",
+  "tasks.max": "1",
+  "errors.log.enable": "true",
+  "errors.log.include.messages": "true",
+  "topics": [
+    "httppipe"
+  ],
+  "http.api.url": "http://172.166.1.32:8080/echo",
+  "value.converter": "org.apache.kafka.connect.storage.StringConverter",
+  "request.method": "post",
+  "headers": "Content-Type: application/json",
+  "reporter.result.topic.name": "httpresult",
+  "reporter.result.topic.replication.factor": "1",
+  "reporter.result.topic.partitions": "1",
+  "reporter.error.topic.name": "httperror",
+  "reporter.error.topic.replication.factor": "1",
+  "reporter.error.topic.partitions": "1",
+  "reporter.bootstrap.servers": [
+    "broker:9092"
+  ],
+  "confluent.license": "",
+  "confluent.topic.bootstrap.servers": [
+    "broker:9092"
+  ]
+}

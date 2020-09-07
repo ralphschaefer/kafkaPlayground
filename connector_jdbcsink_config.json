@@ -1,0 +1,22 @@
+{
+  "name": "jdbcsink",
+  "config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+    "tasks.max": "1",
+    "errors.log.enable": true,
+    "errors.log.include.messages": true,
+    "topics": "jdbcpipe",
+    "auto.create": true,
+    "auto.evolve": true,
+    "connection.url": "jdbc:mysql://172.166.1.30:3306/db1",
+    "connection.user": "root",
+    "connection.password": "root",
+    "dialect.name": "MySqlDatabaseDialect",
+    "insert.mode": "insert",
+    "batch.size": "1",
+    "table.name.format": "kafka_${topic}",
+    "pk.mode": "kafka",
+    "_pk.fields": "__connect_offset",
+    "fields.whitelist": "msg"
+  }
+}

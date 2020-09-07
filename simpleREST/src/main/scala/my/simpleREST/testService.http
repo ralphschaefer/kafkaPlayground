@@ -1,14 +1,22 @@
 ###
-GET localhost:8080/echo/world
+GET http://172.166.1.32:8080/echo/world
 
 ###
-POST localhost:8080/echo
+POST http://172.166.1.32:8080/echo
 Content-Type: application/json
 
 {
-  "msg": "world"
+  "msg": "test"
 }
 
 ###
-GET localhost:8080/test
+GET http://172.166.1.32:8080/schema/echo
 
+###
+GET http://172.166.1.32:8080/test
+
+###
+POST http://172.166.1.32:8080/echo
+Content-Type: application/json
+
+Struct{msg=msg1}

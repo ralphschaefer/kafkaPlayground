@@ -58,12 +58,17 @@ lazy val simpleREST = (project in file("simpleREST")).
     )),
     name := "simpleREST",
     assemblyJarName in assembly := name.value + ".jar",
+    assemblyMergeStrategy in assembly := {
+      case "module-info.class" => MergeStrategy.concat
+      case s => MergeStrategy.defaultMergeStrategy(s)
+    },
     test in assembly := {},
     libraryDependencies ++=
       CatsDependencies.libs ++
       Seq(
       "ch.qos.logback" % "logback-classic" % "1.2.3",
-      "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2"
+      "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2",
+      "com.sksamuel.avro4s" %% "avro4s-core" % "4.0.0"
     )
   )
 

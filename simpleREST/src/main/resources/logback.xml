@@ -2,10 +2,14 @@
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
     <withJansi>true</withJansi>
     <encoder>
-      <pattern>[%thread] %highlight(%-5level) %cyan(%logger{15}) - %msg %n</pattern>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan(%logger{36}) - %msg %n</pattern>
     </encoder>
   </appender>
-  <root level="INFO">
+  <root level="ERROR">
     <appender-ref ref="STDOUT" />
   </root>
+  <logger name="my.simpleREST" level="DEBUG">
+    <!-- appender-ref ref="STDOUT" / -->
+  </logger>
+
 </configuration>

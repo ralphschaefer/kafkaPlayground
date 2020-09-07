@@ -1,0 +1,78 @@
+### confluent REST Proxy
+
+### get all tpocs
+GET http://172.166.1.28:8082/topics
+
+### topic details
+GET http://172.166.1.28:8082/topics/test
+
+### write to topic
+POST http://172.166.1.28:8082/topics/test
+Content-Type: application/vnd.kafka.avro.v2+json
+Accept: application/vnd.kafka.v2+json, application/vnd.kafka+json, application/json
+
+{
+  "value_schema": "{\"uuu\":\"int\",\"type\": \"int\"}",
+  "records": [
+    {
+      "value": 9
+    },
+    {
+      "value": 2
+    }
+  ]
+}
+
+
+### write to jdbcpipe
+POST http://172.166.1.28:8082/topics/jdbcpipe
+Content-Type: application/vnd.kafka.avro.v2+json
+Accept: application/vnd.kafka.v2+json, application/vnd.kafka+json, application/json
+
+{
+  "value_schema": "{\"type\":\"record\",\"name\":\"Echo\",\"namespace\":\"my.simpleREST.Messages\",\"fields\":[{\"name\":\"msg\",\"type\":\"string\"}]}",
+  "records": [
+    {
+      "value": {
+        "msg": "aaaaaaa"
+      }
+    },
+    {
+      "value": {
+        "msg": "bbbbbbb"
+      }
+    }
+  ]
+}
+
+
+### write to httptopic as json (for http sink)
+POST http://172.166.1.28:8082/topics/httppipe
+Content-Type: application/vnd.kafka.json.v2+json
+Accept: application/vnd.kafka.v2+json, application/json
+
+{
+  "value_schema": "{\"type\":\"record\",\"name\":\"Echo\",\"namespace\":\"my.simpleREST.Messages\",\"fields\":[{\"name\":\"msg\",\"type\":\"string\"}]}",
+  "records": [
+    {
+      "value": {
+        "msg": "msg8"
+      }
+    },
+    {
+      "value": {
+        "msg": "msg4"
+      }
+    },
+    {
+      "value": {
+        "msg": "aaaa"
+      }
+    },
+    {
+      "value": {
+        "msg": "bbbb"
+      }
+    }
+  ]
+}
