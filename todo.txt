@@ -2,13 +2,8 @@ TODO
 
 -----
 - docu
-- scala consumer for
-  * jdbc source with avro
-- scala producer for
-  * rest sink with json
-  * jdbc sink with avro
 
 -----
-explaine useuscasr
+explain usecase
 kafka :      (source jdbc) ---->connector--(avro)-->topic----> (kafka stream) ---->topic---->connector---->(sink rest)
 simplifier : [connector                                 ]----> (buissnes obj) ---->[connector                        ]
