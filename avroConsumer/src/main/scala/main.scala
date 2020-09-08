@@ -27,7 +27,6 @@ object main extends App {
   kafkaProps.put("schema.registry.url", "http://172.166.1.22:8081")
   kafkaProps.put("max.poll.records", 1)
 
-
   val consumer = new KafkaConsumer[String, GenericRecord](kafkaProps)
   consumer.subscribe(List(topic).asJava)
 

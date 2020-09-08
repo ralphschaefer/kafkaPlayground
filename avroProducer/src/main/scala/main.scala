@@ -35,7 +35,6 @@ object main extends App {
   }
 
   val topic = "jdbcpipe"
-  // val subject = topic + "-value"
   val registry = "http://172.166.1.22:8081"
 
 
