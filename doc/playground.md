@@ -248,10 +248,11 @@ is free, but some connectors are licensed by _confluent_
 Run "Connectors" as kafka connector and produce or consume topics. 
 - connectors can be monitored
 - topic lags of connectors can be monitored
-- topics can be strongly typed via avro. So every connector can handle its on types, which 
-  will be handle be the schema-registry 
+- topics can be strongly typed via avro. So every connector can handle its own types, which 
+  will be handle be the schema-registry. Schemas can be shared und used for different kafka services 
 - connectors will degrade if backend system of connectors fail
-- connectors can handle a much bigger traffic load if run in a connect-cluster
+- connectors can handle a much bigger traffic loads.
+- they can be run in a connect-cluster
 
 ---
 
