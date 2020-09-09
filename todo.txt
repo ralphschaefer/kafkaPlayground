@@ -1,9 +1,0 @@
-TODO
-
------
-- docu
-
------
-explain usecase
-kafka :      (source jdbc) ---->connector--(avro)-->topic----> (kafka stream) ---->topic---->connector---->(sink rest)
-simplifier : [connector                                 ]----> (buissnes obj) ---->[connector                        ]

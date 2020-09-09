@@ -1,6 +1,6 @@
 # kafka overview
 - kafka explained : http://cloudurable.com/blog/what-is-kafka/index.html
-
+- source on github: https://github.com/ralphschaefer/kafkaPlayground
 ---
 
 - architecture: ![basic kafke](./kafka-brokers.png)
@@ -231,3 +231,44 @@ is free, but some connectors are licensed by _confluent_
       ]
     }
   ```
+
+---
+# possible Simplifer usecases
+
+--
+
+## logging
+- Send all logs via kafka producer
+- Aggregate and filter logs with KSQL
+- Store aggregated logs in DB
+- Or use customer specific BackendSystems (AWS, Azure, etc.)
+---
+
+## connector
+Run "Connectors" as kafka connector and produce or consume topics. 
+- connectors can be monitored
+- topic lags of connectors can be monitored
+- topics can be strongly typed via avro. So every connector can handle its on types, which 
+  will be handle be the schema-registry 
+- connectors will degrade if backend system of connectors fail
+- connectors can handle a much bigger traffic load if run in a connect-cluster
+
+---
+
+## kafka stream
+Streams aggregate topics. So it is the same use case as the Simplifier BO's
+
+kafka streams vs. Simplifier BO's:
+```
+kafka :      (connector source) ---->connector--(avro)-->topic----> 
+             (kafka stream)---->
+             topic---->connector---->(connector sink)
+
+simplifier : [connector                                      ]----> 
+             (buissnes obj) ---->
+             [connector                              ]
+``` 
+
+## types
+- replace/enhance simplifier type system with avro and schema registry
+- handle type versions via schema-registry
